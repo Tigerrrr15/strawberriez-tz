@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StrawberrieZ - Каталог товаров</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ШАПКА -->
+    <header>
+        <div class="logo">
+            <h1>🍓 StrawberrieZ</h1>
+        </div>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Поиск товаров..." onkeyup="searchProducts()">
+        </div>
+        <div class="cart-icon" onclick="openCart()">
+            🛒 <span id="cartCount">0</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- БОКОВАЯ ПАНЕЛЬ - ФИЛЬТРЫ -->
+        <aside class="filters">
+            <h3>Фильтры</h3>
+            
+            <div class="filter-group">
+                <label>Цена:</label>
+                <div class="price-range">
+                    <input type="number" id="minPrice" placeholder="от" oninput="filterProducts()">
+                    <input type="number" id="maxPrice" placeholder="до" oninput="filterProducts()">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Категория:</label>
+                <select id="categoryFilter" onchange="filterProducts()">
+                    <option value="all">Все</option>
+                    <option value="Игрушки">Игрушки</option>
+                    <option value="Одежда">Одежда</option>
+                    <option value="Аксессуары">Аксессуары</option>
+                </select>
+            </div>
+
+            <button class="reset-btn" onclick="resetFilters()">Сбросить фильтры</button>
+        </aside>
+
+        <!-- КАТАЛОГ ТОВАРОВ -->
+        <main class="catalog">
+            <div id="productsContainer" class="products-grid">
+                <!-- Товары будут загружены сюда из JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Корзина</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <strong>Итого: <span id="cartTotal">0</span> ₽</strong>
+            </div>
+            <button class="checkout-btn" onclick="alert('Спасибо за заказ! Функция оформления в разработке.')">
+                Оформить заказ
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
