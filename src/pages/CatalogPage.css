@@ -1,0 +1,46 @@
+.catalog-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.catalog-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.catalog-main {
+  flex-grow: 1;
+}
+
+.catalog-sort {
+  margin-bottom: 20px;
+}
+
+.catalog-sort select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.catalog-loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #666;
+}
+
+.catalog-empty {
+  text-align: center;
+  padding: 50px;
+  color: #666;
+}
